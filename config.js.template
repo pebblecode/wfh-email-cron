@@ -1,0 +1,37 @@
+var config = {
+  development: {
+    gmail: {
+      user: '',
+      password: ''
+    },
+    mailOpts: {
+      from: '',
+      to: '',
+      subject: ''
+    }
+  },
+  staging: {
+    gmail: {
+      user: '',
+      password: ''
+    },
+    mailOpts: {
+      from: '',
+      to: '',
+      subject: ''
+    }
+  },
+  production: {
+    gmail: {
+      user: '',
+      password: ''
+    },
+    mailOpts: {
+      from: '',
+      to: '',
+      subject: ''
+    }
+  }
+};
+
+module.exports = config;
