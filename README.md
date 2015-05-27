@@ -27,6 +27,10 @@ To test the script you can simply run it
 
     node index.js
 
+To run the script with config for different environments use an environment variable. 
+
+    NODE_ENV=production node index.js
+
 # Setting up the cron job
 
 You will most likely want to run this on a daily basis to send an email out to the company.
