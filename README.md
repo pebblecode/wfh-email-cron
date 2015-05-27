@@ -41,6 +41,7 @@ To run the task at 10am each day use this:
 
     * 10 * * 1-5 /path/to/script/index.js 
 
+A cronjob is configured on spiderpig to run the script at 10am on every weekday under the `pebble` user.
 
 # TODO
 
