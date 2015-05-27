@@ -39,7 +39,7 @@ The handling of the cron job is delegated to the operating system. If you need a
 
 To run the task at 10am each day use this:
 
-    * * * * 1-5 /path/to/script/index.js 
+    * 10 * * 1-5 /path/to/script/index.js 
 
 
 # TODO
