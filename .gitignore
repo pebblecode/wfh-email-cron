@@ -1,0 +1,13 @@
+node_modules
+.buildpath
+.project
+.settings
+.DS_Store
+.monitor
+*.swp
+*.log
+log
+config.js
+.tm_properties
+coverage
+.swp
