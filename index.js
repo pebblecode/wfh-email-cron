@@ -1,5 +1,5 @@
 var http = require('http');
-var endPoint = "http://wfh.azurewebsites.net/api/statuses";
+var endPoint = "http://workingfrom.pebblecode.com/api/statuses";
 var nodemailer = require('nodemailer');
 var realNames = require('./lib/realnames');
 var lang = require('./lib/lang');
