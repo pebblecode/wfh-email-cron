@@ -1,7 +1,7 @@
 var http = require('http');
 var endPoint = "https://wfh2.pebblecode.net/workers";
 var nodemailer = require('nodemailer');
-var realNames = require('./lib/realnames');
+//var realNames = require('./lib/realnames');
 var lang = require('./lib/lang');
 var config = require('./config');
 
