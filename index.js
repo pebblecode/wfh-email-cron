@@ -1,5 +1,5 @@
 var http = require('http');
-var endPoint = "http://workingfrom.pebblecode.com/api/statuses";
+var endPoint = "https://wfh2.pebblecode.net/workers";
 var nodemailer = require('nodemailer');
 var realNames = require('./lib/realnames');
 var lang = require('./lib/lang');
@@ -52,11 +52,11 @@ var parseBody = function (body) {
   };
 
   var workingInOffice = data.filter(function (obj) {
-    return obj.status.statusType === "WorkInOffice";
+    return obj.status.statusType === "InOffice";
   });
 
   var workingOutOfOffice = data.filter(function (obj) {
-    return obj.status.statusType === "WorkOutOfOffice";
+    return obj.status.statusType === "OutOfOffice";
   });
 
   var holiday = data.filter(function (obj) {
