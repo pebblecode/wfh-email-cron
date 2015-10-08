@@ -1,5 +1,5 @@
-var https = require('https');
-var endPoint = "https://wfh2.pebblecode.net/workers";
+var http = require('http');
+var endPoint = "http://localhost:8181/workers";
 var nodemailer = require('nodemailer');
 //var realNames = require('./lib/realnames');
 var lang = require('./lib/lang');
@@ -77,7 +77,7 @@ var parseBody = function (body) {
 };
 
 
-https.get(endPoint, function(res) {
+http.get(endPoint, function(res) {
 
   var body = '';
 
