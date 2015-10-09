@@ -44,7 +44,7 @@ var parseBody = function (body) {
       mailText += '\n' + lang[element.status.statusType].en + '\n';
       mailText += '--------------------------------\n';
     }
-    mailtext += element.name + '\n';
+    mailText += element.name + '\n';
   };
 
   var workingInOffice = data.filter(function (obj) {
