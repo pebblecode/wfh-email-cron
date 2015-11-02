@@ -1,3 +1,4 @@
+'use strict';
 var http = require('http');
 var nodemailer = require('nodemailer');
 var lang = require('./lib/lang');
@@ -21,17 +22,17 @@ var mailOptions = {
   text: ''
 };
 
-var sendMail = function (mailOptions) {
-  transporter.sendMail(mailOptions, function(error, info){
-    if(error){
+var sendMail = function(mailOptions) {
+  transporter.sendMail(mailOptions, function(error, info) {
+    if (error) {
       console.error(error);
-    }else{
+    } else {
       console.log('Message sent: ' + info.response);
     }
   });
 };
 
-var parseBody = function (body) {
+var parseBody = function(body) {
 
   var mailText = '';
 
@@ -44,26 +45,26 @@ var parseBody = function (body) {
     }
 
     var message = '';
-    if(element.message){
+    if (element.message) {
       message = ' "' + element.message + '"';
     }
 
-    mailText += element.name + message +'\n';
+    mailText += element.name + message + '\n';
   };
 
-  var workingInOffice = data.filter(function (obj) {
+  var workingInOffice = data.filter(function(obj) {
     return obj.status.statusType === 'InOffice';
   });
 
-  var workingOutOfOffice = data.filter(function (obj) {
+  var workingOutOfOffice = data.filter(function(obj) {
     return obj.status.statusType === 'OutOfOffice';
   });
 
-  var holiday = data.filter(function (obj) {
+  var holiday = data.filter(function(obj) {
     return obj.status.statusType === 'Holiday';
   });
 
-  var sick = data.filter(function (obj) {
+  var sick = data.filter(function(obj) {
     return obj.status.statusType === 'Sick';
   });
 
