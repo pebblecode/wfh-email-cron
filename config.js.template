@@ -8,7 +8,8 @@ var config = {
       from: '',
       to: '',
       subject: ''
-    }
+    },
+    endPoint:''
   },
   staging: {
     gmail: {
@@ -19,7 +20,8 @@ var config = {
       from: '',
       to: '',
       subject: ''
-    }
+    },
+    endPoint:''
   },
   production: {
     gmail: {
@@ -30,7 +32,8 @@ var config = {
       from: '',
       to: '',
       subject: ''
-    }
+    },
+    endPoint:''
   }
 };
 

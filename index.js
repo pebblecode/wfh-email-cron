@@ -1,11 +1,9 @@
 var http = require('http');
-var endPoint = "http://localhost:8181/workers";
 var nodemailer = require('nodemailer');
-//var realNames = require('./lib/realnames');
 var lang = require('./lib/lang');
 var config = require('./config');
 
-process.env.NODE_ENV = process.env.NODE_ENV || "development";
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var envConf = config[process.env.NODE_ENV];
 
 var transporter = nodemailer.createTransport({
@@ -44,23 +42,29 @@ var parseBody = function (body) {
       mailText += '\n' + lang[element.status.statusType].en + '\n';
       mailText += '--------------------------------\n';
     }
-    mailText += element.name + '\n';
+
+    var message = '';
+    if(element.message){
+      message = ' "' + element.message + '"';
+    }
+
+    mailText += element.name + message +'\n';
   };
 
   var workingInOffice = data.filter(function (obj) {
-    return obj.status.statusType === "InOffice";
+    return obj.status.statusType === 'InOffice';
   });
 
   var workingOutOfOffice = data.filter(function (obj) {
-    return obj.status.statusType === "OutOfOffice";
+    return obj.status.statusType === 'OutOfOffice';
   });
 
   var holiday = data.filter(function (obj) {
-    return obj.status.statusType === "Holiday";
+    return obj.status.statusType === 'Holiday';
   });
 
   var sick = data.filter(function (obj) {
-    return obj.status.statusType === "Sick";
+    return obj.status.statusType === 'Sick';
   });
 
   workingOutOfOffice.forEach(addToMailText);
@@ -73,7 +77,7 @@ var parseBody = function (body) {
 };
 
 
-http.get(endPoint, function(res) {
+http.get(envConf.endPoint, function(res) {
 
   var body = '';
 
@@ -85,5 +89,5 @@ http.get(endPoint, function(res) {
     parseBody(body);
   });
 }).on('error', function(e) {
-  console.log("Got error: " + e.message);
+  console.log('Got error: ' + e.message);
 });
